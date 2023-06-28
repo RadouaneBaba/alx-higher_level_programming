@@ -7,6 +7,7 @@ Classes:
     Square
 """
 
+
 class Square:
     """define empty square"""
     pass
