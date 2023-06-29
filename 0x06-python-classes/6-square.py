@@ -9,11 +9,12 @@ Classes:
 
 class Square:
     """ square class definition """
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """
             initialise square object
         Args:
             size (int): size of square
+            position (tuple): position
         """
         if type(size) != int:
             raise TypeError("size must be an integer")
@@ -21,6 +22,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
+        self.__position = position
 
     def area(self):
         """
@@ -52,6 +54,19 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
+
+    @property
+    def position(self):
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        if type(value[0]) != int or type(value[1]) != int or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__postion = value
 
     def my_print(self):
         """ print square """
