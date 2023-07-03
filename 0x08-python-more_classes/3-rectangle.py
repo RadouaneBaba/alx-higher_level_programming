@@ -56,6 +56,7 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 custom_s += "#"
-            custom_s += "\n"
+            if i < self.__height - 1:
+                custom_s += "\n"
 
         return custom_s
