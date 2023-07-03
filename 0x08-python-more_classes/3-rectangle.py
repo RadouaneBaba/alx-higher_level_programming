@@ -53,8 +53,8 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return ""
         custom_s = ""
-        for i in range(height):
-            for j in range(width):
+        for i in range(self.__height):
+            for j in range(self.__width):
                 custom_s += "#"
             custom_s += "\n"
 
