@@ -16,3 +16,6 @@ class Student:
             if s in self.__dict__:
                 my_obj[s] = self.__dict__[s]
         return my_obj
+
+    def reload_from_json(self, json):
+        self.__dict__.update(json)
