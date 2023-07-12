@@ -12,6 +12,7 @@ class Student:
         if not attrs:
             return self.__dict__
         my_obj = {}
-        for s in my_obj:
-            if s in self.__dict__.keys():
+        for s in attrs:
+            if s in self.__dict__:
                 my_obj[s] = self.__dict__[s]
+            return my_obj
