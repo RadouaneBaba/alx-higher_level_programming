@@ -9,6 +9,7 @@ def pascal_triangle(n):
         return []
     prev = []
     for i in range(n):
+        my_list = []
         for j in range(i + 1):
             if len(prev) == 0:
                 s = 1
