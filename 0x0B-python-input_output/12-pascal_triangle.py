@@ -14,11 +14,11 @@ def pascal_triangle(n):
             if len(prev) == 0:
                 s = 1
             elif (j - 1) < 0:
-                s = prev[j]
+                s = prev[-1][j]
             elif j == len(prev):
-                s = prev[j - 1]
+                s = prev[-1][j - 1]
             else:
-                s = prev[j - 1] + prev[j]
+                s = prev[-1][j - 1] + prev[-1][j]
             my_list.append(s)
-        print(my_list)
-        prev = my_list
+        prev.append(my_list)
+    return prev
