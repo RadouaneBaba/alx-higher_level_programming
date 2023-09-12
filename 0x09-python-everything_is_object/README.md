@@ -1,1 +1,0 @@
-Everythin is object
