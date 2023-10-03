@@ -2,6 +2,7 @@
 
 """ module that contains add function """
 
+
 def add_integer(a, b=98):
     """ add two nums """
     if type(a) not in [int, float]:

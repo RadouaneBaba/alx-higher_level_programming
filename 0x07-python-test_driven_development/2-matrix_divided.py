@@ -2,16 +2,18 @@
 
 """ module of matrix divided function """
 
+
 def matrix_divided(matrix, div):
     """ dividing a matrix by a num """
+    err = "matrix must be a matrix (list of lists) of integers/floats"
     if not isinstance(matrix, list):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError(err)
     for row in matrix:
         if not isinstance(row, list):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError(err)
         for n in row:
             if not isinstance(n, (int, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(err)
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if div == 0:

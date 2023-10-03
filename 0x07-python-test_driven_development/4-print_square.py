@@ -2,6 +2,7 @@
 
 """ print square module """
 
+
 def print_square(size):
     """ print square of size size """
     if not isinstance(size, int):
