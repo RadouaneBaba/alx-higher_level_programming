@@ -1,3 +1,4 @@
+#1
 >>> MyList = __import__('1-my_list').MyList
 >>> my_list = MyList()
 >>> my_list.append(1)
@@ -11,3 +12,13 @@
 [1, 2, 3, 4, 5]
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+
+#3
+>>> empty_list = MyList([])
+>>> empty_list.print_sorted()
+[]
+
+#4
+>>> duplicate_list = MyList([2, 2, 1, 1, 3, 3])
+>>> duplicate_list.print_sorted()
+[1, 1, 2, 2, 3, 3]
