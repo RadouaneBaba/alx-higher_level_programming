@@ -5,6 +5,9 @@
 
 def read_file(filename=""):
     """ func that reads a file """
-    with open(filename, 'r', encoding="utf-8") as f:
-        data = f.read()
-        print(data)
+    try:
+        with open(filename, 'r', encoding="utf-8") as f:
+            data = f.read()
+            print(data)
+    except Exception as e:
+        print(e)
