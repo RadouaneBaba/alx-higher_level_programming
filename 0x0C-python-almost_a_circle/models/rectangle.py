@@ -115,4 +115,11 @@ class Rectangle(Base):
                     super().__init__(value)
                 else:
                     self.integer_validator(key, value)
-                    setattr(self, key, value)
+                    if key == "width":
+                    self.width = value
+                    if key == "height":
+                        self.height = value
+                    if key == "x":
+                        self.x = value
+                    if key == "y":
+                        self.y = value
