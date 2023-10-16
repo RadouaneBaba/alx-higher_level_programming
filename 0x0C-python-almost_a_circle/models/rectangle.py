@@ -93,7 +93,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ update method """
-        if args is not None:
+        if args:
             if len(args) >= 1:
                 super().__init__(args[0])
             if len(args) >= 2:
@@ -109,7 +109,7 @@ class Rectangle(Base):
                 self.integer_validator("y", args[4])
                 self.y = args[4]
 
-        if len(args) == 0 and kwargs is not None:
+        elif len(args) == 0 and kwargs:
             for key, value in kwargs.items():
                 if key == "id":
                     super().__init__(value)
@@ -123,3 +123,5 @@ class Rectangle(Base):
                         self.x = value
                     elif key == "y":
                         self.y = value
+        else:
+            return
