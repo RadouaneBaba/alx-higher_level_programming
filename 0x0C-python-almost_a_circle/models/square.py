@@ -18,7 +18,7 @@ class Square(Rectangle):
     def size(self):
         """ size getter """
         return self.width
-    
+
     @size.setter
     def size(self, value):
         """ set size """
@@ -38,11 +38,11 @@ class Square(Rectangle):
             size = kwargs["size"] if "size" in kwargs else self.size
             x = kwargs["x"] if "x" in kwargs else self.x
             y = kwargs["y"] if "y" in kwargs else self.y
-        
+
         self.integer_validator("width", size)
         self.integer_validator("x", x)
         self.integer_validator("y", y)
-        
+
         self.size = size
         self.x = x
         self.y = y
