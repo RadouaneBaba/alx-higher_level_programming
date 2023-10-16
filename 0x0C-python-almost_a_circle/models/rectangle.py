@@ -125,3 +125,8 @@ class Rectangle(Base):
                         self.y = value
         else:
             return
+
+    def to_dictionary(self):
+        """ dict of rec """
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
