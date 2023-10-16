@@ -109,7 +109,7 @@ class Rectangle(Base):
                 self.integer_validator("y", args[4])
                 self.y = args[4]
 
-        if not args and kwargs is not None:
+        if len(args) == 0 and kwargs is not None:
             for key, value in kwargs.items():
                 if key == "id":
                     super().__init__(value)
