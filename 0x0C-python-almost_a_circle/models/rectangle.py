@@ -113,13 +113,13 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if key == "id":
                     super().__init__(value)
-                else:
+                elif key in ["width", "height", "x", "y"]:
                     self.integer_validator(key, value)
                     if key == "width":
                         self.width = value
-                    if key == "height":
+                    elif key == "height":
                         self.height = value
-                    if key == "x":
+                    elif key == "x":
                         self.x = value
-                    if key == "y":
+                    elif key == "y":
                         self.y = value
