@@ -116,7 +116,7 @@ class Rectangle(Base):
                 else:
                     self.integer_validator(key, value)
                     if key == "width":
-                    self.width = value
+                        self.width = value
                     if key == "height":
                         self.height = value
                     if key == "x":
