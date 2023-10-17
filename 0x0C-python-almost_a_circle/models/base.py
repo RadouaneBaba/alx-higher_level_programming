@@ -30,6 +30,8 @@ class Base:
         f_name = f"{cls.__name__}.json"
         with open(f_name, 'w', encoding="utf-8") as f:
             llist = []
+            if list_objs is None:
+                f.write("[]")
             for e in list_objs:
                 llist.append(e.to_dictionary())
             f.write(Base.to_json_string(llist))
@@ -41,3 +43,24 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ create instance """
+        r0 = Rectangle(10, 10, 10, 10, 10)
+        r0.update(dictionary)
+
+    @classmethod
+    def load_from_file(cls):
+        """ load from file """
+        filename = f"{cls}.json"
+        try:
+            with open(filename, 'r', encoding="utf-8") as f:
+                llist = []
+                json_list = Base.from_json_string(f.read())
+                for j in json_list:
+                    instance = cls.create(j)
+                    llist.append(instance)
+                return llist
+        except FileNotFoundError:
+            return []
