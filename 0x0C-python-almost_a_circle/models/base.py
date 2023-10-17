@@ -48,9 +48,14 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ create instance """
-        r0 = cls(1, 1)
-        r0.update(**dictionary)
-        return r0
+        if cls == Rectangle:
+            r0 = cls(1, 1)
+            r0.update(**dictionary)
+            return r0
+        if cls == Square:
+            s0 = cls(1)
+            s0.update(**dictionary)
+            return s0
 
     @classmethod
     def load_from_file(cls):
