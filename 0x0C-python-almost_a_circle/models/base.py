@@ -29,7 +29,15 @@ class Base:
         """ save to file """
         f_name = f"{cls.__name__}.json"
         with open(f_name, 'w', encoding="utf-8") as f:
-            l = []
+            llist = []
             for e in list_objs:
-                l.append(e.to_dictionary())
-            f.write(Base.to_json_string(l))
+                llist.append(e.to_dictionary())
+            f.write(Base.to_json_string(llist))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ from json string """
+        if json_string in [None, []]:
+            return []
+        else:
+            return json.loads(json_string)
