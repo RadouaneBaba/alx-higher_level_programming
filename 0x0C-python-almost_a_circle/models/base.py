@@ -32,9 +32,10 @@ class Base:
             llist = []
             if list_objs is None:
                 f.write("[]")
-            for e in list_objs:
-                llist.append(e.to_dictionary())
-            f.write(Base.to_json_string(llist))
+            else:
+                for e in list_objs:
+                    llist.append(e.to_dictionary())
+                f.write(Base.to_json_string(llist))
 
     @staticmethod
     def from_json_string(json_string):
@@ -47,8 +48,9 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ create instance """
-        r0 = Rectangle(10, 10, 10, 10, 10)
-        r0.update(dictionary)
+        r0 = cls(10, 10, 10)
+        r0.update(**dictionary)
+        return r0
 
     @classmethod
     def load_from_file(cls):
