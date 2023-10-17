@@ -3,7 +3,6 @@
 """ module of base class """
 import json
 
-
 class Base:
     """ Base class """
     __nb_objects = 0
@@ -48,11 +47,11 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ create instance """
-        if cls == Rectangle:
+        if cls.__name__ == 'Rectangle':
             r0 = cls(1, 1)
             r0.update(**dictionary)
             return r0
-        if cls == Square:
+        if cls.__name__ == 'Square':
             s0 = cls(1)
             s0.update(**dictionary)
             return s0
