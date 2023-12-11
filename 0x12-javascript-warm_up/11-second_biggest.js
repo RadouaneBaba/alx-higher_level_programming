@@ -18,7 +18,7 @@ if (argv.length === 2 || argv.length === 3) {
     secBiggest = parseInt(argv[3]);
   }
   for (let i = 3; i < argv.length; i++) {
-    if (i == index) {
+    if (i === index) {
       continue;
     }
     if (parseInt(argv[i]) > secBiggest) {
