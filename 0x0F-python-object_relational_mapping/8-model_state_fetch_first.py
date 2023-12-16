@@ -11,4 +11,7 @@ if __name__ == '__main__':
     session = Session(engine)
     query = select(State)
     state = session.scalars(query).first()
-    print(f"{state.id}: {state.name}")
+    if not state:
+        print("")
+    else:
+        print(f"{state.id}: {state.name}")
