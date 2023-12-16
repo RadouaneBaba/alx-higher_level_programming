@@ -10,5 +10,5 @@ if __name__ == '__main__':
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     session = Session(engine)
     query = select(State)
-    for state in session.scalars(query):
-        print(f"{state.id}: {state.name}")
+    state = session.scalars(query).first()
+    print(f"{state.id}: {state.name}")
