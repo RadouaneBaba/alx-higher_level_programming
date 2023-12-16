@@ -12,4 +12,4 @@ if __name__ == '__main__':
         query = select(State).where(State.name.like('%a%'))
         for state in session.scalars(query):
             session.delete(state)
-            session.commit()
+        session.commit()
