@@ -12,6 +12,6 @@ if __name__ == '__main__':
     query = select(State)
     state = session.scalars(query).first()
     if not state:
-        print("")
+        print("Nothing")
     else:
         print(f"{state.id}: {state.name}")
