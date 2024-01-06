@@ -6,10 +6,26 @@ def find_peak(list_of_integers):
     """ func to find peak """
     if not list_of_integers:
         return None
-    peak = list_of_integers[0]
-    for n in list_of_integers:
-        if n < peak:
-            return peak
-        if n > peak:
-            peak = n
-    return peak
+    if len(list_of_integers) == 1:
+        return list_of_integers[0]
+
+    mid = int(len(list_of_integers) / 2)
+
+    parent = list_of_integers[mid]
+
+    if mid - 1 >= 0:
+        left = list_of_integers[mid - 1]
+    else:
+        left = mid
+    if mid + 1 < len(list_of_integers):
+        right = list_of_integers[mid + 1]
+    else:
+        right = mid
+
+    if parent > left and parent > right:
+        return parent
+    elif right > parent:
+
+        return find_peak(list_of_integers[mid:])
+    elif left >= parent:
+        return find_peak(list_of_integers[:mid])
