@@ -9,7 +9,7 @@ def find_peak(list_of_integers):
     if len(list_of_integers) == 1:
         return list_of_integers[0]
 
-    mid = int(len(list_of_integers) / 2)
+    mid = len(list_of_integers) // 2
 
     parent = list_of_integers[mid]
 
@@ -24,8 +24,7 @@ def find_peak(list_of_integers):
 
     if parent > left and parent > right:
         return parent
-    elif right > parent:
-
-        return find_peak(list_of_integers[mid:])
     elif left >= parent:
         return find_peak(list_of_integers[:mid])
+    elif right >= parent:
+        return find_peak(list_of_integers[mid + 1:])
