@@ -8,5 +8,6 @@ const options = { json: true };
 request(url, options, (err, res, body) => {
   if (err) return;
   const myArr = body.results.filter(a => a.characters.includes(chaUrl));
-  console.log(myArr.length);
+  if (!myArr) console.log(0);
+  else console.log(myArr.length);
 });
